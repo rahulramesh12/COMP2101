@@ -1,26 +1,35 @@
 #!/bin/bash
 #
-# this script rolls a pair of six-sided dice and displays both the rolls and the sum
+# this script rolls a pair of six-sided dice and displays both the rolls
 #
 
-# Improve this script by re-organizing it to:
+# Task 1:
 #  put the number of sides in a variable which is used as the range for the random number
-#  put the bias, or offset, for the RANDOM number in a variable (it is 1 for our purposes)
-#     - you can think of this as the minimum value for the generated number
+#  put the bias, or minimum value for the generated number in another variable
 #  roll the dice using the variables for the range and bias i.e. RANDOM % range + bias
+
+# Task 2:
 #  generate the sum of the dice
 #  generate the average of the dice
-#  display a summary of what was rolled, and what the result was
+
+#  display a summary of what was rolled, and what the results of your arithmetic were
+
+# To show the user that we have started processing
+#assigning variables
+range=6
+bias=1
 
 # Tell the user we have started processing
 echo "Rolling..."
 # roll the dice and save the results
-sides=6
-range=1
-die1=$(( RANDOM % $sides + $range))
-die2=$(( RANDOM % $sides + $range))
-# sum up the rolls
-sum=$(( die1 + die2 ))
-average=$((sum / 2))
+die1=$(( RANDOM % range + bias))
+die2=$(( RANDOM % range + bias ))
 # display the results
-echo "Rolled $die1, $die2 which gives a sum of  $sum and a average of $average"
+echo "Numbers Rolled Are $die1, $die2."
+#finding sum
+sum=$(( die1 + die2 ))
+#finding average
+average=$((sum / 2))
+#displaying results
+echo "Sum of the numbers is $sum and the average of the number is $average."
+echo "******************************************"

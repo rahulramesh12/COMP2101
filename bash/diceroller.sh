@@ -1,19 +1,26 @@
 #!/bin/bash
 #
-# this script rolls a pair of six-sided dice
+# this script rolls a six-sided die
 #
 
-# Improve this script by adding a second line of output showing a roll of 5 six-sided dice
-# Improve this script by adding a third line of output that rolls a single 20-sided die
-# These improvements should also take into consideration the user, and make all 3 output lines self-explanatory to the user
-#    - e.g. the first line should be changed to read something like:
-#         Rolling a pair of standard dice: x,y rolled
-#      and the other output lines should be similarly helpful to the user
+# Task: Improve this script by making it roll as many dice as there are letters in your first name, instead of just one
 
 # roll the dice and display the result
-echo "Rolling a pair of 6 sided dice...Rolling...
-$(( RANDOM % 6 + 1)), $(( RANDOM % 6 + 1 )) rolled"
-echo "Rolling a pair of 5 sided dice...Rolling...
-$(( RANDOM % 5 + 1)), $(( RANDOM % 5 + 1)) rolled"
-echo "Rolling a single 20 sided dice...Rolling...
-$((RANDOM % 20 + 1)) rolled"
+echo "rolling a six sided dice
+Rolling...
+$(( RANDOM % 6 + 1)) and $(( RANDOM % 6 + 1))  has been rolled"
+echo "*******************************************************"
+
+#Rolling 5 six sided die and displaying the result
+echo "We are rolling five six sided die
+Rolling...
+$(( RANDOM % 6 + 1)), $(( RANDOM % 6 + 1)), $(( RANDOM % 6 + 1)), $(( RANDOM % 6 + 1)) and $(( RANDOM % 6 + 1)) have rolled
+"
+echo "*******************************************************"
+
+# Rolling one 20 sided dice and displaying the result
+echo "We are rolling a twenty sided dice
+Rolling...
+$(( RANDOM % 20 + 1)) has rolled
+"
+
