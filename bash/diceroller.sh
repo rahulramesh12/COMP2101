@@ -23,4 +23,3 @@ echo "We are rolling a twenty sided dice
 Rolling...
 $(( RANDOM % 20 + 1)) has rolled
 "
-

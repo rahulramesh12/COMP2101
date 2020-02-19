@@ -11,6 +11,11 @@
 # TASK 5: Add a test to see if the /etc/resolv.conf file is writable
 # TASK 6: Add a test to see if the /etc/resolv.conf file is executable
 test -e /etc/resolv.conf && echo "/etc/resolv.conf exists" || echo "/etc/resolv.conf does not exist"
+test -f /etc/resolv.conf && echo "/etc/resolv.conf is a regular file" || echo "/etc/resolv.conf is not a regular file"
+test -h /etc/resolv.conf && echo "/etc/resolv.conf is a symbolic link" || echo "/etc/resolv.conf is not a symbolic link"
+test -r /etc/resolv.conf && echo "/etc/resolv.conf is readable" || echo "/etc/resolv.conf is not readable"
+test -w /etc/resolv.conf && echo "/etc/resolv.conf is writable" || echo "/etc/resolv.conf is not writable"
+test -x /etc/resolv.conf && echo "/etc/resolv.conf is executable" || echo "/etc/resolv.conf is not executable"
 
 # Tests if /tmp is a directory
 # TASK 4: Add a test to see if the /tmp directory is readable
@@ -22,7 +27,7 @@ test -e /etc/resolv.conf && echo "/etc/resolv.conf exists" || echo "/etc/resolv.
 # TASK 7: Add testing to print out which file newest, or if they are the same age
 [ /etc/hosts -nt /etc/resolv.conf ] && echo "/etc/hosts is newer than /etc/resolv.conf"
 [ /etc/hosts -ot /etc/resolv.conf ] && echo "/etc/resolv.conf is newer than /etc/hosts"
-[ ! /etc/hosts -nt /etc/resolv.conf -a ! /etc/hosts -ot /etc/resolv.conf ] && echo "/etc/hosts is the same age as /etc/resolv.conf"
+[ /etc/hosts -nt /etc/resolv.conf -a ! /etc/hosts -ot /etc/resolv.conf ] && echo "/etc/hosts is the same age as /etc/resolv.conf"
 
 # this section demonstrates doing numeric tests in bash
 
@@ -30,8 +35,8 @@ test -e /etc/resolv.conf && echo "/etc/resolv.conf exists" || echo "/etc/resolv.
 # TASK 2: Improve it by adding a test to tell the user if the numbers are even or odd
 # TASK 3: Improve it by adding a test to tell the user is the second number is a multiple of the first number
 
-firstNumber=4
-secondNumber=7
+firstNumber=5
+secondNumber=8
 
 [ $firstNumber -eq $secondNumber ] && echo "The two numbers are the same"
 [ $firstNumber -ne $secondNumber ] && echo "The two numbers are not the same"
@@ -53,5 +58,4 @@ secondNumber=7
 # TASK 4: Use the read command to ask the user running the script to give us strings to use for the tests
 a=1
 b=01
-
 [ $a = $b ] && echo "$a is alphanumerically equal to $b" || echo "$a is not alphanumerically equal to $b"
