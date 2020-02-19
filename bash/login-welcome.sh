@@ -29,3 +29,7 @@ day=$( date +%A)
 [ $day == "Friday" ] && title="funday"
 [ $day == "Saturday" ] && title="weeknd"
 [ $day == "Sunday" ] && title="weeknd"
+
+myvar="Welcome to planet $hostname, $title $myname
+It is $hours:$min $meridian on $day"
+cowsay $myvar
